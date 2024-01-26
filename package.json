@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "predeploy": "npm run build",
-    "deplpy": "gh-pages -d build"
+    "predeploy": "npm run dist",
+    "deplpy": "gh-pages -d dist"
   },
   "devDependencies": {
     "gh-pages": "^6.1.1"
