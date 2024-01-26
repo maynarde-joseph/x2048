@@ -1,9 +1,15 @@
 {
+  "homepage": "https://maynarde-joseph.github.io/x2048/",
   "dependencies": {
-    "sweetalert2": "^11.10.4"
+    "sweetalert2": "^11.6.13"
   },
   "type": "module",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "predeploy": "npm run build",
+    "deplpy": "gh-pages -d build"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
   }
 }
