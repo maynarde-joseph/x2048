@@ -1,0 +1,131 @@
+body{
+  height: 700px;
+  background-color: #faf8ef;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  font-size: 60px;
+  font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+#game-board{
+  width: 500px;
+  height: 500px;
+  background-color: #b3a395;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  gap: 10px;
+  padding: 15px;
+}
+
+#main-page{
+  display: flex;
+}
+
+.title-2048{
+  padding-right: 20px;
+  margin-bottom: 20px;
+  color: #776e65;
+}
+
+.tile {
+  width: 117px;
+  height: 117px;
+  font-size: xx-large;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
+}
+
+
+/* copied directly from  main.css at https://play2048.co/ */
+.restart-button {
+  display: inline-block;
+  background: #8f7a66;
+  border-radius: 3px;
+  padding: 0 20px;
+  text-decoration: none;
+  color: #f9f6f2;
+  height: 40px;
+  width: 130px;
+  line-height: 42px;
+  cursor: pointer;
+  display: block;
+  text-align: center;
+  flex-shrink: 0;
+  font-size: x-large;
+  font-weight: bold;
+}
+
+/* Values for colors taken from main.css at https://play2048.co/ */
+/* Naming convention also taken from ^ */
+.tile-null {
+  background-color: rgb(221, 204, 187);
+  color: #776e65;
+}
+
+.tile-2 {
+  background-color: #eee4da;
+  color: #776e65;
+}
+
+.tile-4 {
+  background-color: #eee1c9;
+  color: #776e65;
+}
+
+.tile-8 {
+  background-color: #f3b27a;
+  color: #f9f6f2;
+}
+
+.tile-16{
+  background-color: #f69664;
+  color: #f9f6f2;
+}
+
+.tile-32{
+  background-color: #f77c5f;
+  color: #f9f6f2;
+}
+
+.tile-64{
+  background-color: #f75f3b;
+  color: #f9f6f2;
+}
+
+.tile-128{
+  background-color: #edd073;
+  color: #f9f6f2;
+}
+
+.tile-256{
+  background-color: #edcc62;
+  color: #f9f6f2;
+}
+
+.tile-512{
+  background-color: #edc950;
+  color: #f9f6f2;
+}
+
+.tile-1024{
+  background-color: #edc53f;
+  color: #f9f6f2;
+}
+
+.tile-2048{
+  background-color: #edc22e;
+  color: #f9f6f2;
+}
+
+@keyframes show {
+  0% {
+    opacity: .5;
+    transform: scale(0);
+  }
+}

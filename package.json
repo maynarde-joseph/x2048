@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "sweetalert2": "^11.10.4"
+  },
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  }
+}
