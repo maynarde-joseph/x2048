@@ -114,41 +114,42 @@ function checkEmpty() {
 // Function to handle user input
 // ArrowUp, ArrowDown, ArrowLeft, ArrowRight to move and r to print coordinates
 function handleUserInput(event) {
+  sleep(1).then(() => { 
+    if (!canMove()) {
+      return;
+    }
+  });
   if (event.key === "ArrowLeft" && canPerformUpAction(allTiles)) {
     allTiles = slideUp(allTiles)
     if (!checkEmpty()) {
       randomEmptyTile().value = Math.random() > .5 ? 2 : 4;
-      if (canMove()) {
-        document.removeEventListener("keydown", handleUserInput);
-        document.addEventListener("keydown", handleUserInput, { once: true });
-      }
+      allPop(allTiles);
+      document.removeEventListener("keydown", handleUserInput);
+      document.addEventListener("keydown", handleUserInput, { once: true });
     }
   } else if (event.key === "ArrowRight" && canPerformDownAction(allTiles)) {
     allTiles = slideDown(allTiles)
     if (!checkEmpty()) {
       randomEmptyTile().value = Math.random() > .5 ? 2 : 4;
-      if (canMove()) {
-        document.removeEventListener("keydown", handleUserInput);
-        document.addEventListener("keydown", handleUserInput, { once: true });
-      }
+      allPop(allTiles);
+      document.removeEventListener("keydown", handleUserInput);
+      document.addEventListener("keydown", handleUserInput, { once: true });
     }
   } else if (event.key === "ArrowUp" && canPerformLeftAction(allTiles)) {
     allTiles = slideLeft(allTiles)
     if (!checkEmpty()) {
       randomEmptyTile().value = Math.random() > .5 ? 2 : 4;
-      if (canMove()) {
-        document.removeEventListener("keydown", handleUserInput);
-        document.addEventListener("keydown", handleUserInput, { once: true });
-      }
+      allPop(allTiles);
+      document.removeEventListener("keydown", handleUserInput);
+      document.addEventListener("keydown", handleUserInput, { once: true });
     }
   } else if (event.key === "ArrowDown" && canPerformRightAction(allTiles)) {
     allTiles = slideRight(allTiles)
     if (!checkEmpty()) {
       randomEmptyTile().value = Math.random() > .5 ? 2 : 4;
-      if (canMove()) {
-        document.removeEventListener("keydown", handleUserInput);
-        document.addEventListener("keydown", handleUserInput, { once: true });
-      }
+      allPop(allTiles);
+      document.removeEventListener("keydown", handleUserInput);
+      document.addEventListener("keydown", handleUserInput, { once: true });
     }
   } else if (event.key === "r") {
     viewTiles(allTiles)
@@ -281,7 +282,24 @@ function slide(row) {
     }
   }
 
+  // make all pop
   return row;
+}
+
+function allPop(board) {
+  for (let i = 0; i < 4; i++) {
+    for (let j = 0; j < 4; j++) {
+      if (board[i][j] !== null) {
+        const value = board[i][j].value;
+        board[i][j].value = null;
+        sleep(0.1).then(() => { board[i][j].value = value; });
+      }
+    }
+  }
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 // Function that seperate array and checks if can canSlide()
