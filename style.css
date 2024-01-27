@@ -72,61 +72,77 @@ body{
 .tile-2 {
   background-color: #eee4da;
   color: #776e65;
+  animation: pop 0.2s linear;
 }
 
 .tile-4 {
   background-color: #eee1c9;
   color: #776e65;
+  animation: pop 0.2s linear;
 }
 
 .tile-8 {
   background-color: #f3b27a;
   color: #f9f6f2;
+  animation: pop 0.2s linear;
 }
 
 .tile-16{
   background-color: #f69664;
   color: #f9f6f2;
+  animation: pop 0.2s linear;
 }
 
 .tile-32{
   background-color: #f77c5f;
   color: #f9f6f2;
+  animation: pop 0.2s linear;
 }
 
 .tile-64{
   background-color: #f75f3b;
   color: #f9f6f2;
+  animation: pop 0.2s linear;
 }
 
 .tile-128{
   background-color: #edd073;
   color: #f9f6f2;
+  animation: pop 0.2s linear;
 }
 
 .tile-256{
   background-color: #edcc62;
   color: #f9f6f2;
+  animation: pop 0.2s linear;
 }
 
 .tile-512{
   background-color: #edc950;
   color: #f9f6f2;
+  animation: pop 0.2s linear;
 }
 
 .tile-1024{
   background-color: #edc53f;
   color: #f9f6f2;
+  animation: pop 0.2s linear;
 }
 
 .tile-2048{
   background-color: #edc22e;
   color: #f9f6f2;
+  animation: pop 0.2s linear;
 }
 
-@keyframes show {
+@keyframes pop {
   0% {
-    opacity: .5;
-    transform: scale(0);
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(.9);
+  }
+  100% {
+    transform: scale(1);
   }
 }
